@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #15803d;
+  --color-on-primary: #ffffff;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-border: #e2e8f0;
+  --color-tint: #dcfce7;
+  --color-bg: #ffffff;
+  --color-surface: #f1f5f9;
+  --color-footer-text: #cbd5e1;
+
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-26: 26px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+
+  --radius-10: 10px;
+  --radius-md: 12px;
+  --radius-14: 14px;
+  --radius-20: 20px;
+  --radius-28: 28px;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center rounded-[var(--radius-md)] bg-primary px-[var(--space-28)] py-[var(--space-14)] text-base font-semibold text-white transition-colors
+           hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center rounded-[var(--radius-md)] border-2 border-primary px-[var(--space-26)] py-[var(--space-12)] text-base font-semibold text-primary transition-colors
+           hover:bg-tint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+  .feature-card {
+    @apply flex h-full flex-col gap-4 rounded-[var(--radius-20)] border border-line bg-bg p-[var(--space-28)] transition-colors
+           hover:border-primary hover:bg-tint focus-within:border-primary;
+  }
+  .icon-wrap {
+    @apply flex h-14 w-14 items-center justify-center rounded-[var(--radius-14)] bg-tint text-primary;
+  }
+  .feature-card:hover .icon-wrap { @apply bg-bg; }
+  .field {
+    @apply w-full rounded-[var(--radius-10)] border border-line bg-bg px-[var(--space-14)] py-[var(--space-12)] text-[15px] text-ink placeholder:text-muted
+           focus:border-primary focus:outline focus:outline-2 focus:outline-primary;
+  }
+  .hero-leaf { transform: scale(5); }
+}
+
+@media (max-width: 767px) {
+  .hero-leaf { transform: scale(3.43); }
+}
